@@ -14,6 +14,20 @@ docker build -t paybyphone/soa docker-oracle-xe-11g-soa
 ```
 docker run -d -p 49160:22 -p 49161:1521 paybyphone/soa
 ```
+### The following support roles will be created automatically
+```
+SUPPORT_SELECT_ROLE
+SUPPORT_INSERT_ROLE
+SUPPORT_DELETE_ROLE
+SUPPORT_UPDATE_ROLE
+SUPPORT_ALTER_ROLE
+```
+### If running under boot2docker, stop the boot2docker-vm and forward some ports:
+```
+setup-port-forwarding.cmd
+or
+setup-port-forwarding.sh
+```
 ### Connect to database:
 ```
 hostname: localhost
@@ -37,13 +51,4 @@ oracle
 ```
 ssh root@localhost -p 49160
 password: admin
-```
-
-### The following support roles will be created automatically
-```
-SUPPORT_SELECT_ROLE
-SUPPORT_INSERT_ROLE
-SUPPORT_DELETE_ROLE
-SUPPORT_UPDATE_ROLE
-SUPPORT_ALTER_ROLE
 ```
