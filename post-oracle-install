@@ -12,8 +12,14 @@ cd oracle
 echo Waiting for Oracle to start up...
 ./wait-for-oracle
 
+echo Changing to bootstrap script folder
+cd bootstrap
+
 echo Running bootstrap Oracle database scripts...
-sqlplus system/oracle @setup_roles.sql
+for X in *; do
+  echo Running $X...
+  sqlplus system/oracle @$X
+done
 
 echo Starting SSH daemon...
 /usr/sbin/sshd -D

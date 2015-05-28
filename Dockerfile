@@ -39,11 +39,11 @@ RUN echo 'export PATH=$ORACLE_HOME/bin:$PATH' >> /etc/bash.bashrc
 RUN echo 'export ORACLE_SID=XE' >> /etc/bash.bashrc
 
 # Post Oracle Steps
-RUN mkdir /oracle
+RUN mkdir -p /oracle/bootstrap
 ADD post-oracle-install /oracle/post-oracle-install
 ADD wait-for-oracle /oracle/wait-for-oracle
 ADD has-oracle-started.sql /oracle/has-oracle-started.sql
-ADD setup_roles.sql /oracle/setup_roles.sql
+ADD bootstrap /oracle/bootstrap
 RUN chmod +x /oracle/post-oracle-install
 RUN chmod +x /oracle/wait-for-oracle
 
