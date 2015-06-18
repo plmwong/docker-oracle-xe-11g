@@ -48,8 +48,8 @@ RUN chmod +x /oracle/post-oracle-install
 RUN chmod +x /oracle/wait-for-oracle
 
 # Create SOA qa environment dbf folder
-RUN mkdir -p /opt/oracle/soap/dbf/
-RUN chown -R oracle /opt/oracle
+RUN mkdir -p /data/soa/dbf/
+RUN chown -R oracle /data/soa
 
 # Remove installation files
 RUN rm /oracle-xe_11.2.0-1.0_amd64.deb*
